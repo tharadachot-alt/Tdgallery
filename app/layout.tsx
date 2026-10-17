@@ -16,9 +16,9 @@ const serifThai = Noto_Serif_Thai({
   display: "swap",
 });
 
-const title = "Thada Gallery — หินขัดทรงกลมและภาพวาดสีน้ำ";
+const title = "Thada Gallery — Stone Spheres & Watercolor";
 const description =
-  "แกลเลอรีเล็ก ๆ ของหินธรรมชาติขัดทรงกลม (Sphere) ลวดลาย Ocean Jasper และภาพวาดสีน้ำ คัดสรรด้วยใจ สำหรับคนรักหินและคนรักงานศิลปะ";
+  "A quiet little gallery of polished natural stone spheres — including Ocean Jasper from Madagascar — and original watercolor paintings, chosen with care for stone lovers and art lovers.";
 
 export const metadata: Metadata = {
   title,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: "Thada Gallery",
-    locale: "th_TH",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="th"
+      lang="en"
       className={`${plexThai.variable} ${serifThai.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

@@ -11,37 +11,37 @@ const CONTACTS = {
 const HIGHLIGHTS = [
   {
     palette: "sand" as const,
-    title: "แกลเลอรี ไม่ใช่ร้านค้า",
-    body: "เราจัดแสดงผลงานให้คุณได้ชมอย่างสบายใจ ไม่เร่ง ไม่ขายเยอะ หากชิ้นไหนถูกใจ เพียงทักมาคุยกับเราได้เลย",
+    title: "A gallery, not a shop",
+    body: "Take your time and browse at your own pace — no rush, no hard sell. If a piece speaks to you, simply reach out and we'll talk.",
   },
   {
     palette: "clay" as const,
-    title: "ความนิ่งแบบ Zen กับลวดลายจากธรรมชาติ",
-    body: "พื้นที่เรียบ สงบ ให้ลวดลายของหินอย่าง Ocean Jasper จากมาดากัสการ์ได้เป็นพระเอกของตัวเอง",
+    title: "Zen calm, natural patterns",
+    body: "A quiet, minimal space that lets the patterns of stones like Ocean Jasper from Madagascar take center stage.",
   },
   {
     palette: "sky" as const,
-    title: "คัดทีละชิ้นด้วยสายตาศิลปิน",
-    body: "หินทุกลูกและภาพทุกภาพผ่านการเลือกด้วยใจ เพราะงานแต่ละชิ้นมีเพียงหนึ่งเดียว ไม่ซ้ำใคร",
+    title: "Hand-picked by an artist's eye",
+    body: "Every sphere and every painting is chosen with care — each piece is one of a kind.",
   },
 ];
 
 const FAQS = [
   {
-    q: "สนใจชิ้นงาน ต้องทำอย่างไร?",
-    a: "กดปุ่ม “Contact Us” แล้วส่งข้อความหาเราทาง Facebook หรือ Instagram แจ้งชิ้นงานที่สนใจ เราจะตอบกลับพร้อมรายละเอียดและราคาค่ะ",
+    q: "I'm interested in a piece. What should I do?",
+    a: "Tap “Contact Us” and send us a message on Facebook or Instagram telling us which piece you like. We'll reply with details and pricing.",
   },
   {
-    q: "หิน Sphere เป็นหินธรรมชาติแท้หรือไม่?",
-    a: "หินทุกลูกเป็นหินธรรมชาติที่นำมาขัดเป็นทรงกลม ลวดลายและสีเกิดจากธรรมชาติ แต่ละลูกจึงมีลายไม่เหมือนกัน",
+    q: "Are the spheres genuine natural stone?",
+    a: "Yes. Every sphere is natural stone polished into a round form. The colors and patterns are entirely natural, so no two spheres are alike.",
   },
   {
-    q: "ส่งต่างประเทศได้ไหม?",
-    a: "ได้ เราดูแลการแพ็กอย่างดีทั้งหินและภาพวาด ค่าจัดส่งขึ้นกับน้ำหนักและปลายทาง สอบถามได้ทุกภาษาที่สะดวก (ไทย / English)",
+    q: "Do you ship internationally?",
+    a: "Yes. Both stones and paintings are carefully packed. Shipping cost depends on weight and destination — feel free to ask in English or Thai.",
   },
   {
-    q: "ขอดูรูปหรือวิดีโอเพิ่มเติมได้หรือเปล่า?",
-    a: "ได้เลย ทักมาบอกชิ้นที่สนใจ เราจะถ่ายรูปและวิดีโอในแสงธรรมชาติให้ดูลวดลายชัด ๆ ก่อนตัดสินใจ",
+    q: "Can I see more photos or a video?",
+    a: "Of course. Let us know which piece you're curious about, and we'll share photos and video in natural light so you can see the patterns clearly.",
   },
 ];
 
@@ -80,9 +80,9 @@ export default function Home() {
             Thada Gallery
           </a>
           <div className="hidden items-center gap-8 text-sm text-ink-soft md:flex">
-            <a href="#about" className="transition-colors hover:text-clay">แนวคิด</a>
-            <a href="#collection" className="transition-colors hover:text-clay">ผลงาน</a>
-            <a href="#faq" className="transition-colors hover:text-clay">คำถาม</a>
+            <a href="#about" className="transition-colors hover:text-clay">Philosophy</a>
+            <a href="#collection" className="transition-colors hover:text-clay">Collection</a>
+            <a href="#faq" className="transition-colors hover:text-clay">FAQ</a>
           </div>
           <a
             href="#contact"
@@ -108,13 +108,13 @@ export default function Home() {
                 <span className="text-clay">Gallery</span>
               </h1>
               <p className="mt-6 max-w-md text-lead leading-relaxed text-ink-soft">
-                พื้นที่สงบสำหรับชื่นชมลวดลายที่ธรรมชาติใช้เวลาหลายล้านปีวาดขึ้น
-                ทั้งหินขัดทรงกลมและภาพวาดสีน้ำ คัดสรรทีละชิ้นด้วยใจ
+                A quiet space to admire patterns that nature spent millions of years
+                painting — polished stone spheres and watercolors, chosen one by one.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-5">
                 <ContactButton />
                 <a href="#collection" className="text-sm text-ink-soft underline decoration-line underline-offset-8 transition-colors hover:text-clay">
-                  ชมผลงาน
+                  View collection
                 </a>
               </div>
             </Reveal>
@@ -125,7 +125,7 @@ export default function Home() {
                 <div className="overflow-hidden rounded-[2rem]">
                   <Image
                     src="/sphere-collection.jpg"
-                    alt="หิน Ocean Jasper ขัดทรงกลม 2 ลูก ลายจุดสีส้มบนพื้นน้ำตาล วางบนแผ่นไม้"
+                    alt="Two polished Ocean Jasper spheres with orange orbs on a brown background, resting on a wood slice"
                     width={1280}
                     height={1280}
                     loading="eager"
@@ -144,8 +144,8 @@ export default function Home() {
         <section id="about" className="scroll-mt-20 bg-paper px-5 py-20 sm:px-8 md:py-28">
           <SectionHeading
             eyebrow="Our Philosophy"
-            title="ชมก่อน รู้สึกก่อน แล้วค่อยคุยกัน"
-            sub="เราอยากให้ที่นี่เป็นเหมือนแกลเลอรีเงียบ ๆ ที่คุณเดินเข้ามาได้ทุกเมื่อ"
+            title="Look first, feel first, then let's talk"
+            sub="We want this to feel like a quiet gallery you can wander into any time."
           />
           <ul className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3 md:gap-8">
             {HIGHLIGHTS.map((h, i) => (
@@ -162,8 +162,8 @@ export default function Home() {
         <section id="collection" className="scroll-mt-20 px-5 py-20 sm:px-8 md:py-28">
           <SectionHeading
             eyebrow="Collection"
-            title="ผลงานในแกลเลอรี"
-            sub="แต่ละชิ้นมีเพียงหนึ่งเดียว ราคาขึ้นอยู่กับขนาดและลวดลาย กรุณาสอบถามผู้ขาย"
+            title="In the gallery"
+            sub="Each piece is one of a kind. Prices vary by size and pattern — please contact the seller."
           />
 
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-12">
@@ -171,7 +171,7 @@ export default function Home() {
               <div className="relative overflow-hidden">
                 <Image
                   src="/sphere-collection.jpg"
-                  alt="หินขัดทรงกลม Ocean Jasper พร้อมหินดิบลายเดียวกัน"
+                  alt="Polished Ocean Jasper spheres beside a rough piece of the same stone"
                   width={1280}
                   height={1280}
                   sizes="(min-width: 768px) 36rem, 100vw"
@@ -180,14 +180,15 @@ export default function Home() {
               </div>
               <div className="p-7 sm:p-9">
                 <p className="text-eyebrow uppercase tracking-[0.3em] text-clay">Stone Sphere</p>
-                <h3 className="mt-2 font-serif text-h3">หินธรรมชาติขัดทรงกลม</h3>
+                <h3 className="mt-2 font-serif text-h3">Polished natural stone spheres</h3>
                 <p className="mt-3 text-ink-soft">
-                  หินที่ถูกขัดจนกลมเกลี้ยงเพื่อเผยลวดลายรอบด้าน โดยเฉพาะ Ocean Jasper
-                  ที่มีวงจุดคล้ายดอกไม้บานบนผิวหิน วางโชว์บนฐานไม้เรียบ ๆ ก็เป็นงานศิลปะได้ทันที
+                  Stones polished into perfect spheres to reveal their patterns from every angle —
+                  especially Ocean Jasper, with orbs that bloom like flowers across the surface.
+                  Set on a simple wooden stand, each one becomes a work of art.
                 </p>
                 <div className="mt-6 flex items-center justify-between border-t border-line pt-5 text-sm">
-                  <span className="text-ink-soft">ราคา</span>
-                  <a href="#contact" className="text-clay-deep underline underline-offset-4 hover:text-clay">สอบถามผู้ขาย</a>
+                  <span className="text-ink-soft">Price</span>
+                  <a href="#contact" className="text-clay-deep underline underline-offset-4 hover:text-clay">Contact the seller</a>
                 </div>
               </div>
             </Reveal>
@@ -198,14 +199,14 @@ export default function Home() {
               </div>
               <div className="p-7 sm:p-9">
                 <p className="text-eyebrow uppercase tracking-[0.3em] text-sky-deep">Watercolor</p>
-                <h3 className="mt-2 font-serif text-h3">ภาพวาดสีน้ำ</h3>
+                <h3 className="mt-2 font-serif text-h3">Watercolor paintings</h3>
                 <p className="mt-3 text-ink-soft">
-                  ภาพวาดสีน้ำต้นฉบับ ฝีมือศิลปินของแกลเลอรี ถ่ายทอดความนุ่มนวลของแสง น้ำ
-                  และธรรมชาติ ด้วยโทนสีที่สงบ เหมาะกับมุมพักผ่อนในบ้าน
+                  Original watercolors by the gallery&apos;s artist, capturing the softness of
+                  light, water and nature in calm tones — made for a quiet corner of your home.
                 </p>
                 <div className="mt-6 flex items-center justify-between border-t border-line pt-5 text-sm">
-                  <span className="text-ink-soft">ราคา</span>
-                  <a href="#contact" className="text-clay-deep underline underline-offset-4 hover:text-clay">สอบถามผู้ขาย</a>
+                  <span className="text-ink-soft">Price</span>
+                  <a href="#contact" className="text-clay-deep underline underline-offset-4 hover:text-clay">Contact the seller</a>
                 </div>
               </div>
             </Reveal>
@@ -216,7 +217,7 @@ export default function Home() {
 
         {/* ===== คำถามที่พบบ่อย ===== */}
         <section id="faq" className="scroll-mt-20 px-5 py-20 sm:px-8 md:py-28">
-          <SectionHeading eyebrow="FAQ" title="คำถามที่พบบ่อย" />
+          <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
           <div className="mx-auto max-w-3xl space-y-4">
             {FAQS.map((f, i) => (
               <Reveal key={f.q} delay={i * 100}>
@@ -241,10 +242,10 @@ export default function Home() {
             <Orb palette="sand" rings={5} className="drift-slow absolute -bottom-10 -right-6 w-36 opacity-40 sm:w-52" />
             <div className="relative">
               <p className="text-eyebrow uppercase tracking-[0.35em] text-sky-soft">Contact the Gallery</p>
-              <h2 className="mt-3 font-serif text-h2 leading-snug">สนใจชิ้นไหน ทักมาคุยกันได้เลย</h2>
+              <h2 className="mt-3 font-serif text-h2 leading-snug">Found a piece you love? Let&apos;s talk.</h2>
               <p className="mx-auto mt-4 max-w-xl text-sky-soft">
-                สอบถามราคา ขอดูรูปเพิ่มเติม หรือแค่อยากคุยเรื่องหินและงานศิลปะ เรายินดีเสมอ
-                <br className="hidden sm:block" /> We welcome messages in English too.
+                Ask about pricing, request more photos, or just chat about stones and art —
+                we&apos;re always happy to hear from you.
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <a
@@ -281,7 +282,7 @@ export default function Home() {
           <Orb palette="clay" rings={4} className="w-5" />
           Thada Gallery
         </div>
-        <p>หินขัดทรงกลม · ภาพวาดสีน้ำ · คัดสรรด้วยใจ</p>
+        <p>Stone spheres · Watercolors · Chosen with care</p>
         <p className="mt-2">© 2026 Thada Gallery</p>
       </footer>
     </>
