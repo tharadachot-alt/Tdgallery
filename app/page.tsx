@@ -139,7 +139,7 @@ export default function Home() {
               <p className="mt-4 text-center text-sm text-ink-soft">Ocean Jasper · Madagascar</p>
             </Reveal>
           </div>
-          <div className="relative mx-auto max-w-6xl px-5 pb-12 sm:px-8 md:pb-16">
+          <div className="relative pb-12 md:pb-16">
             <RollingSphere />
           </div>
         </section>

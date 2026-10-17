@@ -147,40 +147,30 @@ details[open] .faq-icon {
   }
 }
 
-/* ===== ลูก sphere การ์ตูนกลิ้งใต้ banner ===== */
+/* ===== ลูก sphere การ์ตูนกลิ้งใต้ banner (ซ้ายสุด → ขวาสุด แล้ววนใหม่) ===== */
 @keyframes roll-move {
-  0%,
-  6% {
-    transform: translateX(0);
+  0% {
+    transform: translateX(var(--roll-start, -100px));
   }
-  44%,
-  56% {
-    transform: translateX(var(--roll-distance, 0px));
-  }
-  94%,
+  88%,
   100% {
-    transform: translateX(0);
+    transform: translateX(var(--roll-end, 0px));
   }
 }
 @keyframes roll-spin {
-  0%,
-  6% {
+  0% {
     transform: rotate(0deg);
   }
-  44%,
-  56% {
-    transform: rotate(var(--roll-degrees, 0deg));
-  }
-  94%,
+  88%,
   100% {
-    transform: rotate(0deg);
+    transform: rotate(var(--roll-degrees, 0deg));
   }
 }
 .roll-move,
 .roll-spin {
-  animation-duration: 26s;
+  animation-duration: var(--roll-duration, 50s);
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  animation-timing-function: linear;
 }
 .roll-move {
   animation-name: roll-move;
@@ -194,5 +184,8 @@ details[open] .faq-icon {
   .roll-move,
   .roll-spin {
     animation: none;
+  }
+  .roll-move {
+    transform: translateX(24px);
   }
 }
