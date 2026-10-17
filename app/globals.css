@@ -146,3 +146,53 @@ details[open] .faq-icon {
     animation: none;
   }
 }
+
+/* ===== ลูก sphere การ์ตูนกลิ้งใต้ banner ===== */
+@keyframes roll-move {
+  0%,
+  6% {
+    transform: translateX(0);
+  }
+  44%,
+  56% {
+    transform: translateX(var(--roll-distance, 0px));
+  }
+  94%,
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes roll-spin {
+  0%,
+  6% {
+    transform: rotate(0deg);
+  }
+  44%,
+  56% {
+    transform: rotate(var(--roll-degrees, 0deg));
+  }
+  94%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.roll-move,
+.roll-spin {
+  animation-duration: 26s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+}
+.roll-move {
+  animation-name: roll-move;
+}
+.roll-spin {
+  animation-name: roll-spin;
+  transform-origin: 50% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roll-move,
+  .roll-spin {
+    animation: none;
+  }
+}

@@ -54,8 +54,8 @@ export function JasperField({ className = "" }: { className?: string }) {
     <div className={`pointer-events-none select-none ${className}`} aria-hidden="true">
       <Orb palette="clay" className="drift absolute -left-4 top-[3%] w-14 opacity-60 sm:w-20" />
       <Orb palette="sky" rings={6} className="drift-slow absolute -right-4 top-[2%] w-16 opacity-50 sm:w-28" />
-      <Orb palette="moss" rings={4} className="drift absolute bottom-[3%] left-[40%] w-10 opacity-50 sm:w-12" />
-      <Orb palette="sand" className="drift-slow absolute -bottom-3 right-[3%] w-14 opacity-60 sm:w-16" />
+      <Orb palette="moss" rings={4} className="drift absolute top-[48%] -left-3 w-10 opacity-50 sm:w-12" />
+      <Orb palette="sand" className="drift-slow absolute top-[55%] -right-4 w-12 opacity-60 sm:w-14" />
     </div>
   );
 }

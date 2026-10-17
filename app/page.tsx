@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import RollingSphere from "@/components/RollingSphere";
 import { JasperField, Orb, StoneDivider, Watercolor } from "@/components/Jasper";
 
 /* ===== ช่องทางติดต่อ (แก้ลิงก์จริงตรงนี้) ===== */
@@ -97,7 +98,7 @@ export default function Home() {
         {/* ===== ส่วนหัว ===== */}
         <section className="stone-texture relative overflow-hidden">
           <JasperField className="absolute inset-0" />
-          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-16 sm:px-8 md:grid-cols-[1.1fr_1fr] md:pb-28 md:pt-24">
+          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-6 pt-16 sm:px-8 md:grid-cols-[1.1fr_1fr] md:pb-8 md:pt-24">
             <Reveal>
               <p className="mb-5 text-eyebrow uppercase tracking-[0.35em] text-sky-deep">
                 Stone Spheres · Watercolor
@@ -137,6 +138,9 @@ export default function Home() {
               </div>
               <p className="mt-4 text-center text-sm text-ink-soft">Ocean Jasper · Madagascar</p>
             </Reveal>
+          </div>
+          <div className="relative mx-auto max-w-6xl px-5 pb-12 sm:px-8 md:pb-16">
+            <RollingSphere />
           </div>
         </section>
 
