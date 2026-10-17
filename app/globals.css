@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
+/* ===== สีและตัวอักษรของทั้งเว็บ (แก้ที่นี่ที่เดียว) ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* โทนครีม (พื้นหลัง) */
+  --cream: #f6efe3;
+  --cream-deep: #ece1cf;
+  --paper: #fbf7f0;
+  /* ส้มดินเผา (สีหลัก) */
+  --clay: #c8643b;
+  --clay-deep: #a44e2c;
+  --clay-soft: #e9a27e;
+  /* ฟ้าหม่น (สีรอง) */
+  --sky: #7fa7b8;
+  --sky-deep: #4f7a8c;
+  --sky-soft: #c9dce3;
+  /* เขียวมอสจาก Ocean Jasper */
+  --moss: #8e9a6b;
+  /* ตัวอักษร */
+  --ink: #3b2f27;
+  --ink-soft: #6e6157;
+  --line: #d9cbb5;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-paper: var(--paper);
+  --color-clay: var(--clay);
+  --color-clay-deep: var(--clay-deep);
+  --color-clay-soft: var(--clay-soft);
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
+  --color-sky-soft: var(--sky-soft);
+  --color-moss: var(--moss);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+
+  --font-sans: var(--font-plex-thai);
+  --font-serif: var(--font-serif-thai);
+
+  /* ขนาดตัวอักษร */
+  --text-eyebrow: 0.8rem;
+  --text-body: 1.0625rem;
+  --text-lead: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+  --text-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-h2: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem);
+  --text-display: clamp(2.6rem, 1.8rem + 4vw, 5rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-plex-thai), sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.8;
+}
+
+/* ===== Motion เล็ก ๆ แบบสุขุม ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(6deg);
+  }
+}
+.drift {
+  animation: drift 14s ease-in-out infinite;
+}
+.drift-slow {
+  animation: drift 22s ease-in-out infinite reverse;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+.breathe {
+  animation: breathe 9s ease-in-out infinite;
+}
+
+/* ภาพค่อย ๆ ซูมเมื่อชี้ */
+.gallery-frame img {
+  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gallery-frame:hover img {
+  transform: scale(1.04);
+}
+
+/* ลายหินมินิมอล (เส้นจาง ๆ แบบหินอ่อน) */
+.stone-texture {
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgb(255 255 255 / 0.5), transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgb(200 100 59 / 0.06), transparent 55%),
+    radial-gradient(ellipse at 60% 10%, rgb(127 167 184 / 0.08), transparent 50%);
+}
+
+/* คำถามที่พบบ่อย */
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .drift,
+  .drift-slow,
+  .breathe {
+    animation: none;
+  }
 }
